@@ -1,0 +1,43 @@
+[2022-02-15 03:15:02,606] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.test.my_new_project.stg_customers manual__2022-02-15T03:14:06.780838+00:00 [queued]>
+[2022-02-15 03:15:02,645] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.test.my_new_project.stg_customers manual__2022-02-15T03:14:06.780838+00:00 [queued]>
+[2022-02-15 03:15:02,647] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:15:02,654] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-15 03:15:02,656] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:15:02,703] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): test.my_new_project.stg_customers> on 2022-02-15 03:14:06.780838+00:00
+[2022-02-15 03:15:02,716] {standard_task_runner.py:52} INFO - Started process 1289 to run task
+[2022-02-15 03:15:02,740] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt_training_bytecode', 'test.my_new_project.stg_customers', 'manual__2022-02-15T03:14:06.780838+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmprck34c6j', '--error-file', '/tmp/tmp7ro5860t']
+[2022-02-15 03:15:02,742] {standard_task_runner.py:77} INFO - Job 111: Subtask test.my_new_project.stg_customers
+[2022-02-15 03:15:02,879] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt_training_bytecode.test.my_new_project.stg_customers manual__2022-02-15T03:14:06.780838+00:00 [running]> on host 459d09dd7c86
+[2022-02-15 03:15:03,041] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Bytecode
+AIRFLOW_CTX_DAG_ID=dbt_training_bytecode
+AIRFLOW_CTX_TASK_ID=test.my_new_project.stg_customers
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-15T03:14:06.780838+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-15T03:14:06.780838+00:00
+[2022-02-15 03:15:03,043] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-02-15 03:15:03,045] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n            dbt --no-write-json test --target dev --models stg_customers             --profiles-dir /opt/***/dbt/dbt-training-bytecode-1 --project-dir /opt/***/dbt/dbt-training-bytecode-1\n            ']
+[2022-02-15 03:15:03,063] {subprocess.py:85} INFO - Output:
+[2022-02-15 03:15:14,495] {subprocess.py:89} INFO - 03:15:14  Running with dbt=1.0.1
+[2022-02-15 03:15:15,128] {subprocess.py:89} INFO - 03:15:15  Found 8 models, 11 tests, 0 snapshots, 0 analyses, 367 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[2022-02-15 03:15:15,134] {subprocess.py:89} INFO - 03:15:15
+[2022-02-15 03:15:18,241] {subprocess.py:89} INFO - 03:15:18  Concurrency: 4 threads (target='dev')
+[2022-02-15 03:15:18,246] {subprocess.py:89} INFO - 03:15:18
+[2022-02-15 03:15:18,292] {subprocess.py:89} INFO - 03:15:18  1 of 3 START test not_null_stg_customers_customer_id............................ [RUN]
+[2022-02-15 03:15:18,328] {subprocess.py:89} INFO - 03:15:18  2 of 3 START test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ [RUN]
+[2022-02-15 03:15:18,399] {subprocess.py:89} INFO - 03:15:18  3 of 3 START test unique_stg_customers_customer_id.............................. [RUN]
+[2022-02-15 03:15:21,915] {subprocess.py:89} INFO - 03:15:21  1 of 3 PASS not_null_stg_customers_customer_id.................................. [PASS in 3.61s]
+[2022-02-15 03:15:21,956] {subprocess.py:89} INFO - 03:15:21  3 of 3 PASS unique_stg_customers_customer_id.................................... [PASS in 3.55s]
+[2022-02-15 03:15:21,978] {subprocess.py:89} INFO - 03:15:21  2 of 3 PASS relationships_stg_orders_customer_id__customer_id__ref_stg_customers_ [PASS in 3.65s]
+[2022-02-15 03:15:22,070] {subprocess.py:89} INFO - 03:15:22
+[2022-02-15 03:15:22,072] {subprocess.py:89} INFO - 03:15:22  Finished running 3 tests in 6.93s.
+[2022-02-15 03:15:22,084] {subprocess.py:89} INFO - 03:15:22
+[2022-02-15 03:15:22,087] {subprocess.py:89} INFO - 03:15:22  Completed successfully
+[2022-02-15 03:15:22,089] {subprocess.py:89} INFO - 03:15:22
+[2022-02-15 03:15:22,093] {subprocess.py:89} INFO - 03:15:22  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2022-02-15 03:15:22,653] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-02-15 03:15:22,703] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=dbt_training_bytecode, task_id=test.my_new_project.stg_customers, execution_date=20220215T031406, start_date=20220215T031502, end_date=20220215T031522
+[2022-02-15 03:15:22,759] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-15 03:15:22,821] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,40 @@
+[2022-02-15 03:14:41,305] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_orders manual__2022-02-15T03:14:06.780838+00:00 [queued]>
+[2022-02-15 03:14:41,325] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_orders manual__2022-02-15T03:14:06.780838+00:00 [queued]>
+[2022-02-15 03:14:41,327] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:14:41,328] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-15 03:14:41,329] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:14:41,368] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): model.my_new_project.stg_orders> on 2022-02-15 03:14:06.780838+00:00
+[2022-02-15 03:14:41,378] {standard_task_runner.py:52} INFO - Started process 1195 to run task
+[2022-02-15 03:14:41,386] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt_training_bytecode', 'model.my_new_project.stg_orders', 'manual__2022-02-15T03:14:06.780838+00:00', '--job-id', '109', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmpfo230t7k', '--error-file', '/tmp/tmp7bn674cs']
+[2022-02-15 03:14:41,390] {standard_task_runner.py:77} INFO - Job 109: Subtask model.my_new_project.stg_orders
+[2022-02-15 03:14:41,505] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_orders manual__2022-02-15T03:14:06.780838+00:00 [running]> on host 459d09dd7c86
+[2022-02-15 03:14:41,628] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Bytecode
+AIRFLOW_CTX_DAG_ID=dbt_training_bytecode
+AIRFLOW_CTX_TASK_ID=model.my_new_project.stg_orders
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-15T03:14:06.780838+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-15T03:14:06.780838+00:00
+[2022-02-15 03:14:41,631] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-02-15 03:14:41,633] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n            dbt --no-write-json run --target dev --models stg_orders             --profiles-dir /opt/***/dbt/dbt-training-bytecode-1 --project-dir /opt/***/dbt/dbt-training-bytecode-1\n            ']
+[2022-02-15 03:14:41,654] {subprocess.py:85} INFO - Output:
+[2022-02-15 03:14:48,961] {subprocess.py:89} INFO - 03:14:48  Running with dbt=1.0.1
+[2022-02-15 03:14:49,101] {subprocess.py:89} INFO - 03:14:49  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2022-02-15 03:14:53,794] {subprocess.py:89} INFO - 03:14:53  Found 8 models, 11 tests, 0 snapshots, 0 analyses, 367 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[2022-02-15 03:14:53,800] {subprocess.py:89} INFO - 03:14:53
+[2022-02-15 03:14:57,142] {subprocess.py:89} INFO - 03:14:57  Concurrency: 4 threads (target='dev')
+[2022-02-15 03:14:57,145] {subprocess.py:89} INFO - 03:14:57
+[2022-02-15 03:14:57,177] {subprocess.py:89} INFO - 03:14:57  1 of 1 START view model dbt_bytecode_training.stg_orders........................ [RUN]
+[2022-02-15 03:14:59,293] {subprocess.py:89} INFO - 03:14:59  1 of 1 OK created view model dbt_bytecode_training.stg_orders................... [SUCCESS 1 in 2.08s]
+[2022-02-15 03:14:59,358] {subprocess.py:89} INFO - 03:14:59
+[2022-02-15 03:14:59,362] {subprocess.py:89} INFO - 03:14:59  Finished running 1 view model in 5.55s.
+[2022-02-15 03:14:59,373] {subprocess.py:89} INFO - 03:14:59
+[2022-02-15 03:14:59,375] {subprocess.py:89} INFO - 03:14:59  Completed successfully
+[2022-02-15 03:14:59,379] {subprocess.py:89} INFO - 03:14:59
+[2022-02-15 03:14:59,383] {subprocess.py:89} INFO - 03:14:59  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2022-02-15 03:15:00,364] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-02-15 03:15:00,482] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=dbt_training_bytecode, task_id=model.my_new_project.stg_orders, execution_date=20220215T031406, start_date=20220215T031441, end_date=20220215T031500
+[2022-02-15 03:15:00,556] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-15 03:15:00,698] {local_task_job.py:264} INFO - 2 downstream tasks scheduled from follow-on schedule check

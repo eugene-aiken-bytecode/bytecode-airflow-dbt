@@ -1,0 +1,70 @@
+[2022-02-14 21:27:08,665] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt.dbt_deps manual__2022-02-14T21:27:05.384362+00:00 [queued]>
+[2022-02-14 21:27:08,685] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt.dbt_deps manual__2022-02-14T21:27:05.384362+00:00 [queued]>
+[2022-02-14 21:27:08,686] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-14 21:27:08,687] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-14 21:27:08,688] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-14 21:27:08,709] {taskinstance.py:1259} INFO - Executing <Task(DbtDepsOperator): dbt_deps> on 2022-02-14 21:27:05.384362+00:00
+[2022-02-14 21:27:08,724] {standard_task_runner.py:52} INFO - Started process 2458 to run task
+[2022-02-14 21:27:08,732] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt', 'dbt_deps', 'manual__2022-02-14T21:27:05.384362+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmplyaf5sli', '--error-file', '/tmp/tmpzoaj4zdy']
+[2022-02-14 21:27:08,736] {standard_task_runner.py:77} INFO - Job 56: Subtask dbt_deps
+[2022-02-14 21:27:08,854] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt.dbt_deps manual__2022-02-14T21:27:05.384362+00:00 [running]> on host bbf4a8b6a1e9
+[2022-02-14 21:27:08,956] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dbt
+AIRFLOW_CTX_TASK_ID=dbt_deps
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-14T21:27:05.384362+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-14T21:27:05.384362+00:00
+[2022-02-14 21:27:08,959] {dbt_hook.py:117} INFO - dbt deps
+[2022-02-14 21:27:08,988] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/operators/dbt_operator.py", line 144, in execute
+    self.create_hook().run_cli('deps')
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/hooks/dbt_hook.py", line 124, in run_cli
+    close_fds=True)
+  File "/usr/local/lib/python3.7/subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "/usr/local/lib/python3.7/subprocess.py", line 1551, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/eugene.aiken/bytecode-airflow-dbt/dbt-training-bytecode': '/Users/eugene.aiken/bytecode-airflow-dbt/dbt-training-bytecode'
+[2022-02-14 21:27:09,019] {taskinstance.py:1277} INFO - Marking task as FAILED. dag_id=dbt, task_id=dbt_deps, execution_date=20220214T212705, start_date=20220214T212708, end_date=20220214T212709
+[2022-02-14 21:27:09,089] {standard_task_runner.py:92} ERROR - Failed to execute job 56 for task dbt_deps
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/operators/dbt_operator.py", line 144, in execute
+    self.create_hook().run_cli('deps')
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow_dbt/hooks/dbt_hook.py", line 124, in run_cli
+    close_fds=True)
+  File "/usr/local/lib/python3.7/subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "/usr/local/lib/python3.7/subprocess.py", line 1551, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/eugene.aiken/bytecode-airflow-dbt/dbt-training-bytecode': '/Users/eugene.aiken/bytecode-airflow-dbt/dbt-training-bytecode'
+[2022-02-14 21:27:09,121] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-02-14 21:27:09,232] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

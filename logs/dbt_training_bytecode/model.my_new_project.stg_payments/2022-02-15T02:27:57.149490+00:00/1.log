@@ -1,0 +1,44 @@
+[2022-02-15 02:28:35,298] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_payments manual__2022-02-15T02:27:57.149490+00:00 [queued]>
+[2022-02-15 02:28:35,318] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_payments manual__2022-02-15T02:27:57.149490+00:00 [queued]>
+[2022-02-15 02:28:35,320] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 02:28:35,321] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-15 02:28:35,322] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 02:28:35,357] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): model.my_new_project.stg_payments> on 2022-02-15 02:27:57.149490+00:00
+[2022-02-15 02:28:35,363] {standard_task_runner.py:52} INFO - Started process 715 to run task
+[2022-02-15 02:28:35,379] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt_training_bytecode', 'model.my_new_project.stg_payments', 'manual__2022-02-15T02:27:57.149490+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmp8e8y3f8s', '--error-file', '/tmp/tmpg1fcxvjy']
+[2022-02-15 02:28:35,381] {standard_task_runner.py:77} INFO - Job 70: Subtask model.my_new_project.stg_payments
+[2022-02-15 02:28:35,485] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt_training_bytecode.model.my_new_project.stg_payments manual__2022-02-15T02:27:57.149490+00:00 [running]> on host de7a240d0d46
+[2022-02-15 02:28:35,563] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Bytecode
+AIRFLOW_CTX_DAG_ID=dbt_training_bytecode
+AIRFLOW_CTX_TASK_ID=model.my_new_project.stg_payments
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-15T02:27:57.149490+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-15T02:27:57.149490+00:00
+[2022-02-15 02:28:35,567] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-02-15 02:28:35,570] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n            dbt --no-write-json run --target dev --models stg_payments             --profiles-dir /opt/***/dbt/dbt-training-bytecode-1 --project-dir /opt/***/dbt/dbt-training-bytecode-1\n            ']
+[2022-02-15 02:28:35,590] {subprocess.py:85} INFO - Output:
+[2022-02-15 02:28:44,570] {subprocess.py:89} INFO - 02:28:44  Running with dbt=1.0.1
+[2022-02-15 02:28:44,999] {subprocess.py:89} INFO - 02:28:44  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2022-02-15 02:28:45,001] {subprocess.py:89} INFO - There are 2 unused configuration paths:
+[2022-02-15 02:28:45,002] {subprocess.py:89} INFO - - models.jaffle_shop.marts.core
+[2022-02-15 02:28:45,004] {subprocess.py:89} INFO - - models.jaffle_shop.staging
+[2022-02-15 02:28:45,005] {subprocess.py:89} INFO - 
+[2022-02-15 02:28:45,070] {subprocess.py:89} INFO - 02:28:45  Found 7 models, 11 tests, 0 snapshots, 0 analyses, 367 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[2022-02-15 02:28:45,083] {subprocess.py:89} INFO - 02:28:45
+[2022-02-15 02:28:48,941] {subprocess.py:89} INFO - 02:28:48  Concurrency: 4 threads (target='dev')
+[2022-02-15 02:28:48,943] {subprocess.py:89} INFO - 02:28:48
+[2022-02-15 02:28:48,958] {subprocess.py:89} INFO - 02:28:48  1 of 1 START view model dbt_bytecode_training.stg_payments...................... [RUN]
+[2022-02-15 02:28:50,831] {subprocess.py:89} INFO - 02:28:50  1 of 1 OK created view model dbt_bytecode_training.stg_payments................. [SUCCESS 1 in 1.87s]
+[2022-02-15 02:28:50,870] {subprocess.py:89} INFO - 02:28:50
+[2022-02-15 02:28:50,882] {subprocess.py:89} INFO - 02:28:50  Finished running 1 view model in 5.78s.
+[2022-02-15 02:28:50,894] {subprocess.py:89} INFO - 02:28:50
+[2022-02-15 02:28:50,899] {subprocess.py:89} INFO - 02:28:50  Completed successfully
+[2022-02-15 02:28:50,902] {subprocess.py:89} INFO - 02:28:50
+[2022-02-15 02:28:50,904] {subprocess.py:89} INFO - 02:28:50  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2022-02-15 02:28:51,397] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-02-15 02:28:51,439] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=dbt_training_bytecode, task_id=model.my_new_project.stg_payments, execution_date=20220215T022757, start_date=20220215T022835, end_date=20220215T022851
+[2022-02-15 02:28:51,500] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-15 02:28:51,574] {local_task_job.py:264} INFO - 2 downstream tasks scheduled from follow-on schedule check

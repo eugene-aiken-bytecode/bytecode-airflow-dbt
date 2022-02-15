@@ -1,0 +1,40 @@
+[2022-02-15 03:05:10,455] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.dbt_seed manual__2022-02-15T03:04:57.520087+00:00 [queued]>
+[2022-02-15 03:05:10,503] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.dbt_seed manual__2022-02-15T03:04:57.520087+00:00 [queued]>
+[2022-02-15 03:05:10,504] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:05:10,506] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-15 03:05:10,507] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:05:10,529] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): dbt_seed> on 2022-02-15 03:04:57.520087+00:00
+[2022-02-15 03:05:10,538] {standard_task_runner.py:52} INFO - Started process 393 to run task
+[2022-02-15 03:05:10,547] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt_training_bytecode', 'dbt_seed', 'manual__2022-02-15T03:04:57.520087+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmp3jerfxmo', '--error-file', '/tmp/tmptmy4b47z']
+[2022-02-15 03:05:10,548] {standard_task_runner.py:77} INFO - Job 88: Subtask dbt_seed
+[2022-02-15 03:05:10,654] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt_training_bytecode.dbt_seed manual__2022-02-15T03:04:57.520087+00:00 [running]> on host 459d09dd7c86
+[2022-02-15 03:05:10,777] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Bytecode
+AIRFLOW_CTX_DAG_ID=dbt_training_bytecode
+AIRFLOW_CTX_TASK_ID=dbt_seed
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-15T03:04:57.520087+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-15T03:04:57.520087+00:00
+[2022-02-15 03:05:10,786] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-02-15 03:05:10,794] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'dbt seed --profiles-dir /opt/***/dbt/dbt-training-bytecode-1 --project-dir /opt/***/dbt/dbt-training-bytecode-1']
+[2022-02-15 03:05:10,834] {subprocess.py:85} INFO - Output:
+[2022-02-15 03:05:17,176] {subprocess.py:89} INFO - 03:05:17  Running with dbt=1.0.1
+[2022-02-15 03:05:17,261] {subprocess.py:89} INFO - 03:05:17  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2022-02-15 03:05:20,274] {subprocess.py:89} INFO - 03:05:20  Found 8 models, 11 tests, 0 snapshots, 0 analyses, 367 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[2022-02-15 03:05:20,283] {subprocess.py:89} INFO - 03:05:20
+[2022-02-15 03:05:24,188] {subprocess.py:89} INFO - 03:05:24  Concurrency: 4 threads (target='dev')
+[2022-02-15 03:05:24,190] {subprocess.py:89} INFO - 03:05:24
+[2022-02-15 03:05:24,213] {subprocess.py:89} INFO - 03:05:24  1 of 1 START seed file dbt_bytecode_training.employees.......................... [RUN]
+[2022-02-15 03:05:31,244] {subprocess.py:89} INFO - 03:05:31  1 of 1 OK loaded seed file dbt_bytecode_training.employees...................... [INSERT 4 in 7.03s]
+[2022-02-15 03:05:31,277] {subprocess.py:89} INFO - 03:05:31
+[2022-02-15 03:05:31,281] {subprocess.py:89} INFO - 03:05:31  Finished running 1 seed in 10.99s.
+[2022-02-15 03:05:31,325] {subprocess.py:89} INFO - 03:05:31
+[2022-02-15 03:05:31,329] {subprocess.py:89} INFO - 03:05:31  Completed successfully
+[2022-02-15 03:05:31,332] {subprocess.py:89} INFO - 03:05:31
+[2022-02-15 03:05:31,336] {subprocess.py:89} INFO - 03:05:31  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2022-02-15 03:05:31,782] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-02-15 03:05:31,820] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=dbt_training_bytecode, task_id=dbt_seed, execution_date=20220215T030457, start_date=20220215T030510, end_date=20220215T030531
+[2022-02-15 03:05:31,863] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-15 03:05:31,939] {local_task_job.py:264} INFO - 3 downstream tasks scheduled from follow-on schedule check

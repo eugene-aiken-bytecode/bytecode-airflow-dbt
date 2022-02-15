@@ -1,0 +1,40 @@
+[2022-02-15 03:24:15,909] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.all_dates manual__2022-02-15T03:24:14.594120+00:00 [queued]>
+[2022-02-15 03:24:15,920] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: dbt_training_bytecode.model.my_new_project.all_dates manual__2022-02-15T03:24:14.594120+00:00 [queued]>
+[2022-02-15 03:24:15,921] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:24:15,922] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-15 03:24:15,923] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-15 03:24:15,943] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): model.my_new_project.all_dates> on 2022-02-15 03:24:14.594120+00:00
+[2022-02-15 03:24:15,948] {standard_task_runner.py:52} INFO - Started process 1914 to run task
+[2022-02-15 03:24:15,958] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'dbt_training_bytecode', 'model.my_new_project.all_dates', 'manual__2022-02-15T03:24:14.594120+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/dbt-***.py', '--cfg-path', '/tmp/tmpp_n7ykym', '--error-file', '/tmp/tmprugx9bvd']
+[2022-02-15 03:24:15,959] {standard_task_runner.py:77} INFO - Job 121: Subtask model.my_new_project.all_dates
+[2022-02-15 03:24:16,040] {logging_mixin.py:109} INFO - Running <TaskInstance: dbt_training_bytecode.model.my_new_project.all_dates manual__2022-02-15T03:24:14.594120+00:00 [running]> on host 459d09dd7c86
+[2022-02-15 03:24:16,116] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Bytecode
+AIRFLOW_CTX_DAG_ID=dbt_training_bytecode
+AIRFLOW_CTX_TASK_ID=model.my_new_project.all_dates
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-15T03:24:14.594120+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-15T03:24:14.594120+00:00
+[2022-02-15 03:24:16,118] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-02-15 03:24:16,119] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n            dbt --no-write-json run --target dev --models all_dates             --profiles-dir /opt/***/dbt/dbt-training-bytecode-1 --project-dir /opt/***/dbt/dbt-training-bytecode-1\n            ']
+[2022-02-15 03:24:16,131] {subprocess.py:85} INFO - Output:
+[2022-02-15 03:24:22,216] {subprocess.py:89} INFO - 03:24:22  Running with dbt=1.0.1
+[2022-02-15 03:24:22,313] {subprocess.py:89} INFO - 03:24:22  Unable to do partial parsing because a project config has changed
+[2022-02-15 03:24:25,956] {subprocess.py:89} INFO - 03:24:25  Found 8 models, 11 tests, 0 snapshots, 0 analyses, 367 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[2022-02-15 03:24:25,969] {subprocess.py:89} INFO - 03:24:25
+[2022-02-15 03:24:30,010] {subprocess.py:89} INFO - 03:24:30  Concurrency: 4 threads (target='dev')
+[2022-02-15 03:24:30,020] {subprocess.py:89} INFO - 03:24:30
+[2022-02-15 03:24:30,057] {subprocess.py:89} INFO - 03:24:30  1 of 1 START table model dbt_bytecode_training.all_dates........................ [RUN]
+[2022-02-15 03:24:33,431] {subprocess.py:89} INFO - 03:24:33  1 of 1 OK created table model dbt_bytecode_training.all_dates................... [SUCCESS 1 in 3.37s]
+[2022-02-15 03:24:33,500] {subprocess.py:89} INFO - 03:24:33
+[2022-02-15 03:24:33,503] {subprocess.py:89} INFO - 03:24:33  Finished running 1 table model in 7.53s.
+[2022-02-15 03:24:33,510] {subprocess.py:89} INFO - 03:24:33
+[2022-02-15 03:24:33,513] {subprocess.py:89} INFO - 03:24:33  Completed successfully
+[2022-02-15 03:24:33,516] {subprocess.py:89} INFO - 03:24:33
+[2022-02-15 03:24:33,519] {subprocess.py:89} INFO - 03:24:33  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2022-02-15 03:24:34,111] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-02-15 03:24:34,143] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=dbt_training_bytecode, task_id=model.my_new_project.all_dates, execution_date=20220215T032414, start_date=20220215T032415, end_date=20220215T032434
+[2022-02-15 03:24:34,193] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-15 03:24:34,233] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
